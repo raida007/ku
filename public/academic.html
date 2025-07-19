@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khulna University - Academic Programs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        header {
+            background-color: #0b3d91;
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 70px;
+            margin-right: 15px;
+        }
+        
+        .logo-text h1 {
+            font-size: 28px;
+            font-weight: 600;
+        }
+        
+        .logo-text p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background-color: #f07e26;
+            padding: 10px 50px;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        
+        nav ul li {
+            position: relative;
+            margin-right: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 15px;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        .submenu {
+            position: absolute;
+            background-color: white;
+            width: 250px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        
+        nav ul li:hover .submenu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .submenu li {
+            margin: 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .submenu li a {
+            color: #333;
+            padding: 12px 15px;
+        }
+        
+        .submenu li a:hover {
+            background-color: #f5f5f5;
+            color: #f07e26;
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/api/placeholder/1200/400');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .hero h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            max-width: 800px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 40px;
+            color: #0b3d91;
+            font-size: 32px;
+            text-align: center;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #f07e26;
+            margin: 15px auto;
+        }
+        
+        .programs-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .program-category {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .program-header {
+            background-color: #0b3d91;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 5px 5px 0 0;
+        }
+        
+        .program-list {
+            background-color: white;
+            border-radius: 0 0 5px 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+        
+        .program-item {
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+        }
+        
+        .program-item:last-child {
+            border-bottom: none;
+        }
+        
+        .program-item h4 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .program-item p {
+            color: #666;
+            margin-bottom: 10px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .program-details {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #777;
+        }
+        
+        .program-duration {
+            display: flex;
+            align-items: center;
+        }
+        
+        .apply-btn {
+            display: inline-block;
+            background-color: #f07e26;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 3px;
+            text-decoration: none;
+            font-size: 13px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .apply-btn:hover {
+            background-color: #d06a1a;
+        }
+        
+        .info-box {
+            background-color: #e9f1fd;
+            border-left: 4px solid #0b3d91;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 5px;
+        }
+        
+        .info-box h3 {
+            color: #0b3d91;
+            margin-bottom: 10px;
+        }
+        
+        .info-box p {
+            line-height: 1.6;
+        }
+        
+        footer {
+            background-color: #0b3d91;
+            color: white;
+            padding: 40px 50px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background: #f07e26;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-column ul li a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="logo">
+                <img src="logo.png" alt="Khulna University Logo">
+                <div class="logo-text">
+                    <h1>Khulna University</h1>
+                    <p>Excellence, Innovation, and Progress</p>
+                </div>
+            </div>
+            <div class="contact-info">
+                <p>Est. 1991 | Khulna, Bangladesh</p>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <a href="#">University Leadership</a>
+                <ul class="submenu">
+                    <li><a href="#">Vice Chancellor</a></li>
+                    <li><a href="#">Pro-Vice Chancellor</a></li>
+                    <li><a href="#">Treasurer</a></li>
+                    <li><a href="#">Registrar</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Academics</a>
+                <ul class="submenu">
+                    <li><a href="#">Undergraduate Programs</a></li>
+                    <li><a href="#">Graduate Programs</a></li>
+                    <li><a href="#">Academic Calendar</a></li>
+                    <li><a href="#">Schools & Disciplines</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Admissions</a>
+                <ul class="submenu">
+                    <li><a href="#">BSc Admission</a></li>
+                    <li><a href="#">MSc Admission</a></li>
+                    <li><a href="#">International Students</a></li>
+                    <li><a href="#">Scholarships</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Research</a></li>
+            <li><a href="#">Student Life</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <div class="hero">
+        <div>
+            <h2>Academic Programs</h2>
+            <p>Discover Khulna University's comprehensive range of undergraduate and graduate programs designed to inspire curiosity and prepare you for the challenges of the 21st century.</p>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h2 class="section-title">Our Academic Programs</h2>
+        
+        <div class="info-box">
+            <h3>Academic Excellence at Khulna University</h3>
+            <p>Since its inception, Khulna University has been committed to fostering an environment that encourages critical thinking, creativity, and collaboration. Our academic programs are designed to inspire curiosity and push boundaries, ensuring our students are equipped to address the challenges of the 21st century and shape the future of Bangladesh and beyond.</p>
+        </div>
+        
+        <div class="programs-container">
+            <div class="program-category">
+                <div class="program-header">
+                    <h3>BSc Programs</h3>
+                </div>
+                <div class="program-list">
+                    <div class="program-item">
+                        <h4>BSc in Computer Science & Engineering</h4>
+                        <p>A comprehensive program focusing on algorithms, programming, software development, and computer systems design.</p>
+                        <div class="program-details">
+                            <span class="program-duration">Duration: 4 Years</span>
+                            <a href="#" class="apply-btn">Program Details</a>
+                        </div>
+                    </div>
+                    
+                    <div class="program-item">
+                        <h4>BSc in Electronics & Communication Engineering</h4>
+                        <p>Study electronic devices, communication systems, signal processing, and telecommunications technology.</p>
+                        <div class="program-details">
+                            <span class="program-duration">Duration: 4 Years</span>
+                            <a href="#" class="apply-btn">Program Details</a>
+                        </div>
+                    </div>
+                    
+                    <div class="program-item">
+                        <h4>BSc in Architecture</h4>
+                        <p>Learn architectural design, urban planning, sustainable development, and construction techniques.</p>
+                        <div class="program-details">
+                            <span class="program-duration">Duration: 5 Years</span>
+                            <a href="#" class="apply-btn">Program Details</a>
+                        </div>
+                    </div>
+                    
+                    <div class="program-item">
+                        <h4>BSc in Environmental Science</h4>
+                        <p>Study ecology, environmental management, conservation, and sustainable development practices.</p>
+                        <div class="program-details">
+                            <span class="program-duration">Duration: 4 Years</span>
+                            <a href="#" class="apply-btn">Program Details</a>
+                        </div>
+                    </div>
+                    
+                    <div class="program-item">
+                        <h4>BSc in Fisheries & Marine Resource Technology</h4>
+                        <p>Focus on aquaculture, fisheries management, marine biodiversity, and resource conservation.</p>
+                        <div class="program-details">
+                            <span class="program-duration">Duration: 4 Years</span>
+                            <a href="#" class="apply-btn">Program Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="program-category">
+                <div class="program-header">
+                    <h3>MSc Programs</h3>
+                </div>
+                <div class="program-list">
+                    <div class="program-item">
+                        <h4>MSc in Computer Science & Engineering</h4>
+                        <p>Advanced study in artificial intelligence, machine learning, data science, and network security.</p>
+                        <div class="program-details">
+                            <span class="program-duration">Duration: 2 Years</span>
+                            <a href="#" class="apply-btn">Program Details</a>
+                        </div>
+                    </div>
+                    
+                    <div class="program-item">
+                        <h4>MSc in Urban & Rural Planning</h4>
+                        <p>Advanced studies in sustainable urban development, regional planning, and infrastructure management.</p>
+                        <div class="program-details">
+                            <span class="program-duration">Duration: 2 Years</span>
+                            <a href="#" class="apply-btn">Program Details</a>
+                        </div>
+                    </div>
+                    
+                    <div class="program-item">
+                        <h4>MSc in Biotechnology & Genetic Engineering</h4>
+                        <p>Advanced research in molecular biology, genetic modification, and biotechnological applications.</p>
+                        <div class="program-details">
+                            <span class="program-duration">Duration: 2 Years</span>
+                            <a href="#" class="apply-btn">Program Details</a>
+                        </div>
+                    </div>
+                    
+                    <div class="program-item">
+                        <h4>MSc in Agrotechnology</h4>
+                        <p>Advanced study in sustainable agriculture, crop improvement, and agricultural technologies.</p>
+                        <div class="program-details">
+                            <span class="program-duration">Duration: 2 Years</span>
+                            <a href="#" class="apply-btn">Program Details</a>
+                        </div>
+                    </div>
+                    
+                    <div class="program-item">
+                        <h4>MSc in Environmental Science</h4>
+                        <p>Specialized research in environmental management, climate change, and ecological conservation.</p>
+                        <div class="program-details">
+                            <span class="program-duration">Duration: 2 Years</span>
+                            <a href="#" class="apply-btn">Program Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-box">
+            <h3>Admission Information</h3>
+            <p>Admissions to all academic programs at Khulna University are highly competitive and based on merit. Undergraduate admissions require completion of HSC/A-level or equivalent, while graduate programs require a relevant bachelor's degree with minimum CGPA requirements. International students are welcome to apply. For detailed admission requirements and application deadlines, please visit the respective program pages.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>Khulna University</li>
+                    <li>Khulna-9208, Bangladesh</li>
+                    <li>Phone: +880-41-XXXXXXX</li>
+                    <li>Email: info@ku.ac.bd</li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Academic Calendar</a></li>
+                    <li><a href="#">Library</a></li>
+                    <li><a href="#">Research Centers</a></li>
+                    <li><a href="#">Career Services</a></li>
+                    <li><a href="#">Alumni</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">E-Learning Portal</a></li>
+                    <li><a href="#">Student Portal</a></li>
+                    <li><a href="#">Faculty Directory</a></li>
+                    <li><a href="#">Publications</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 Khulna University. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

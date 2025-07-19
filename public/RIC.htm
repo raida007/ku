@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research & Innovation Center - Khulna University</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .top-bar {
+            background-color: #8b1538;
+            color: white;
+            padding: 10px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .top-bar-links {
+            display: flex;
+            gap: 20px;
+        }
+        .top-bar-links a {
+            color: white;
+            text-decoration: none;
+        }
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        .social-icons a {
+            color: white;
+            text-decoration: none;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            border-bottom: 1px solid #eee;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            width: 60px;
+            margin-right: 15px;
+        }
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        .logo-text h1 {
+            color: #8b1538;
+            margin: 0;
+            font-size: 24px;
+        }
+        .logo-text h2 {
+            color: #ff8c00;
+            margin: 0;
+            font-size: 18px;
+        }
+        .contact-info {
+            display: flex;
+            gap: 20px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+        }
+        .contact-item img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact-details span:first-child {
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .nav {
+            background-color: #d45d79;
+            padding: 0 50px;
+        }
+        .nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav li:first-child {
+            background-color: white;
+            border-radius: 20px;
+        }
+        .nav li:first-child a {
+            color: #000;
+        }
+        .nav li:last-child {
+            margin-left: auto;
+            background-color: #e41b36;
+        }
+        .nav li:last-child a {
+            color: white;
+        }
+        .nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+        }
+        .content {
+            display: flex;
+            margin: 20px 50px;
+        }
+        .main-content {
+            flex: 3;
+            margin-right: 20px;
+        }
+        .sidebar {
+            flex: 1;
+        }
+        .director-message {
+            margin-bottom: 40px;
+        }
+        .director-message h2 {
+            color: #333;
+            position: relative;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .director-message h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: #ff8c00;
+        }
+        .director-content {
+            display: flex;
+            gap: 20px;
+        }
+        .director-img {
+            flex: 1;
+            max-width: 200px;
+        }
+        .director-img img {
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+        .director-text {
+            flex: 3;
+        }
+        .director-contact {
+            margin-top: 20px;
+        }
+        .sidebar-section {
+            background-color: #2e77ae;
+            color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .sidebar-section h3 {
+            margin-top: 0;
+            border-bottom: 2px solid white;
+            padding-bottom: 10px;
+        }
+        .notice-list, .quicklinks-list {
+            list-style: none;
+            padding: 0;
+        }
+        .notice-list li, .quicklinks-list li {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        .notice-list li a, .quicklinks-list li a {
+            color: white;
+            text-decoration: none;
+        }
+        .quicklinks-section {
+            background-color: #6ab04c;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-links">
+            <a href="#">FAQ</a> | 
+            <a href="#">Help Desk</a> | 
+            <a href="#">Login</a>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i>f</a>
+            <a href="#"><i class="fab fa-linkedin-in"></i>in</a>
+            <a href="#"><i class="fab fa-blogger-b"></i>B</a>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="logo">
+            <img src="logo.png" alt="Khulna University Logo">
+            <div class="logo-text">
+                <h1>RESEARCH & INNOVATION CENTER</h1>
+                <h2>Khulna University</h2>
+            </div>
+        </div>
+        <div class="contact-info">
+            <div class="contact-item">
+                <img src="/api/placeholder/40/40" alt="Phone">
+                <div class="contact-details">
+                    <span>CALL US TODAY!</span>
+                    <span>02-477734139</span>
+                </div>
+            </div>
+            <div class="contact-item">
+                <img src="/api/placeholder/40/40" alt="Clock">
+                <div class="contact-details">
+                    <span>WE ARE OPEN:</span>
+                    <span>Sun-Thur 9:00 AM -5:00 PM</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="history.html">About Us</a></li>
+            <li><a href="#">Team</a></li>
+            <li><a href="#">Activity</a></li>
+            <li><a href="#">Information</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Khulna University</a></li>
+        </ul>
+    </nav>
+
+    <!-- Content -->
+    <div class="content">
+        <div class="main-content">
+            <div class="director-message">
+                <h2>MESSAGE FROM DIRECTOR</h2>
+                <div class="director-content">
+                    <div class="director-img">
+                        <img src="Didar Sir .jpg" alt="Director">
+                    </div>
+                    <div class="director-text">
+                        <p>Welcome to the Research and Innovation Centre (RIC).</p>
+                        <p>The Research and Innovation Centre (RIC) is playing a crucial role in accomplishing Khulna University's stated aim and vision by improving the university's research infrastructure and encouraging successful research among faculty members and research scientists. Acquiring new information has become critical in growing intellectual ability, which is the foundation for a knowledge-based developed society in today's competitive global economy. RIC continues to promote research at the highest level across all university courses and fields through various programs and activities. RIC also creates policies, strategies, and recommendations for research and research-related issues including ethics and integrity. The Research Grant Program (RGP) also provides direct funding to renowned research initiatives through a competitive process.</p>
+                        <p>We appreciate your valuable support and honest engagement in fostering a knowledge-inclusive society by advancing research and communicating findings for the larger benefit.</p>
+                        <div class="director-contact">
+                            <p><strong>Dr. Kazi Mohammed Didarul Islam</strong><br>
+                            Email: [email protected]<br>
+                            Contact: 02-477734139, 01726-852004</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="sidebar-section">
+                <h3>Notice Board</h3>
+                <ul class="notice-list">
+                    <li><a href="#">Collaborative Research Grant Program (CRGP): এর আওতায় গবেষণা প্রস্তাব প্রস্তাবনা করা দেওয়ার সময় বৃদ্ধি সংক্রান্ত।</a></li>
+                    <li><a href="#">Collaborative Research Grant Program (CRGP)-পিটিশনার আবেদনে ২০২৪-২৫ অর্থবছরের জন্য গবেষণা প্রস্তাবনা আহ্বান</a></li>
+                    <li><a href="#">গবেষণা প্রস্তাবনা করা দেওয়ার সময় বৃদ্ধি সংক্রান্ত (২০২৪-২৫ অর্থবছর ৩য় পর্যায়)</a></li>
+                    <li><a href="#">Vice-chancellor's Award প্রদানের জন্য Personal Profile হালনাগাদ করুন প্রসঙ্গে</a></li>
+                    <li><a href="#">২০২৪-২৫ অর্থবছরের ৩য় পর্যায় গবেষণা প্রস্তাবনা আহ্বান</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-section quicklinks-section">
+                <h3>Quicklinks</h3>
+                <ul class="quicklinks-list">
+                    <li><a href="#">Khulna University</a></li>
+                    <li><a href="#">University Grant Comission (UGC)</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

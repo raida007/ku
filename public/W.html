@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khulna University</title>
+    <style>
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        /* Top navigation bar */
+        .top-nav {
+            background-color: #3c5a7d;
+            color: white;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .social-icons {
+            display: flex;
+            margin-left: 20px;
+        }
+        
+        .social-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .top-links {
+            display: flex;
+            margin-right: 20px;
+        }
+        
+        .top-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+        
+        /* Logo and header */
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+        }
+        
+        .logo {
+            width: 120px;
+            height: auto;
+        }
+        
+        .university-name {
+            margin-left: 10px;
+        }
+        
+        .university-name h1 {
+            color: #3c5a7d;
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+        
+        .university-name h2 {
+            color: #f3961d;
+            font-size: 24px;
+        }
+        
+        /* Main navigation */
+        .main-nav {
+            background-color: #1f3b5d;
+            padding: 15px 0;
+        }
+        
+        .main-nav-container {
+            display: flex;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .nav-item {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        .nav-item:hover, .active-nav {
+            background-color: #0f2542;
+        }
+        
+        /* Secondary navigation */
+        .secondary-nav {
+            background-color: #f3961d;
+            display: flex;
+        }
+        
+        .secondary-nav-item {
+            padding: 15px 20px;
+            color: #1f3b5d;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .secondary-nav-item:hover {
+            background-color: #e68a13;
+        }
+        
+        /* Content area */
+        .content {
+            padding: 20px;
+            background-color: #f5f5f5;
+            min-height: 400px;
+        }
+        
+        .content-list {
+            list-style-type: none;
+        }
+        
+        .content-item {
+            margin-bottom: 15px;
+        }
+        
+        .content-item a {
+            color: #007500;
+            text-decoration: none;
+        }
+        
+        .content-item a:hover {
+            text-decoration: underline;
+        }
+        
+        .special-link {
+            color: #800080 !important;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #1f3b5d;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <div class="top-nav">
+        <div class="social-icons">
+            <a href="#" class="social-icon">f</a>
+            <a href="#" class="social-icon">t</a>
+            <a href="#" class="social-icon">y</a>
+            <a href="#" class="social-icon">in</a>
+        </div>
+        <div class="top-links">
+            <a href="#">APA</a> |
+            <a href="#">NEWS</a> |
+            <a href="#">CAREER</a> |
+            <a href="#">NOC/GO</a> |
+            <a href="#">SCHOLARSHIP</a> |
+            <a href="#">RESOURCES</a> |
+            <a href="#">KU UTILITY</a> |
+            <a href="#">D-NOTHI</a> |
+            <a href="#">OIA</a> |
+            <a href="#">IQAC</a>
+        </div>
+    </div>
+    
+    <!-- Logo and Header -->
+    <div class="header">
+        <img src="logo.png" width='120' height='120' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' fill='%2300AEEF'/%3E%3Ccircle cx='60' cy='60' r='50' fill='%23FFFFFF'/%3E%3Cpath d='M60 30 L80 60 L60 90 L40 60 Z' fill='%23F7941D'/%3E%3Ctext x='40' y='65' font-family='Arial' font-size='14' fill='%233C5A7D'%3EKU%3C/text%3E%3C/svg%3E" alt="Khulna University Logo" class="logo">
+        <div class="university-name">
+            <h1>খুলনা বিশ্ববিদ্যালয়</h1>
+            <h2>Khulna University</h2>
+        </div>
+    </div>
+    
+    <!-- Main Navigation -->
+    <div class="main-nav">
+        <div class="main-nav-container">
+            <a href="index.html" class="nav-item active-nav">Home</a>
+            <a href="history.html" class="nav-item">About Us</a>
+            <a href="admin.html" class="nav-item">Administration</a>
+            <a href="academic.html" class="nav-item">Academics</a>
+            <a href="admission.html" class="nav-item">Admission</a>
+            <a href="#" class="nav-item">Centers & Cells</a>
+            <a href="Facilities.html" class="nav-item">Facilities</a>
+            <a href="RIC.htm" class="nav-item">Research & Publications</a>
+           
+        </div>
+    </div>
+    
+    <!-- Secondary Navigation -->
+    <div class="secondary-nav">
+        <a href="#" class="secondary-nav-item">University Leaders</a>
+        <a href="#" class="secondary-nav-item">Schools</a>
+        <a href="#" class="secondary-nav-item">Admission</a>
+        <a href="#" class="secondary-nav-item">Ordinances</a>
+    </div>
+    
+    <!-- Content Area -->
+    <div class="content">
+        <ul class="content-list">
+            <li class="content-item"><a href="#">First Circular on 2nd International Conference on Environment</a></li>
+            <li class="content-item"><a href="#">Registration Form for 2nd International Conference on Environment</a></li>
+            <li class="content-item"><a href="#">Conference on Biotechnology in Sustainable Development 7th to 8th October 2023</a></li>
+            <li class="content-item"><a href="#">Final Programme Scedule of National Seminar- Environmental Science Discipline-KU-UGC</a></li>
+            <li class="content-item"><a href="#">1st International Conference Organized by the Arts and Humanities School - February 22-23, 2023 (Registration Form)</a></li>
+            <li class="content-item"><a href="#">International Conference on Functional Materials for Energy and Manufacturing 2023</a></li>
+            <li class="content-item"><a href="#">1st International Conference on Social Science Issues' on 27 and 28 January 2023 in the campus.</a></li>
+            <li class="content-item"><a href="#" class="special-link">International Conference on STEM and the Fourth Industrial Revolution 2022( ICSTEM4IR 2022 )</a></li>
+            <li class="content-item"><a href="#" class="special-link">Seminar on World Environmental Day 2021</a></li>
+            <li class="content-item"><a href="#" class="special-link">International Conference on Electronics, Communications and Information Technology 2021</a></li>
+            <li class="content-item"><a href="#" class="special-link">Conference Flyer-1st International Conference on Environment.</a></li>
+            <li class="content-item"><a href="#" class="special-link">Registration Form of 1st International Conference on Environment</a></li>
+        </ul>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <p>Activate Windows</p>
+        <p>Go to Settings to activate Windows</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>History - Khulna University</title>
+    <link rel="stylesheet" href="style.css"> <!-- You can extract the shared styles here -->
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fffdfb;
+        }
+
+        header {
+            background-color: #2f4e7a;
+            padding: 10px 0;
+            color: white;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #1e3d6b;
+            display: flex;
+            padding: 10px 20px;
+            align-items: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background-color: white;
+            color: #1e3d6b;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: #1e3d6b;
+            min-width: 160px;
+            top: 100%;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            padding: 10px 15px;
+            display: block;
+            color: white;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #2f4e7a;
+        }
+
+        main {
+            padding: 50px 100px;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #333;
+            border-bottom: 3px solid #93ccea;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        footer {
+            background-color: #2f4e7a;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>খুলনা বিশ্ববিদ্যালয়</h1>
+        <p>Khulna University</p>
+    </header>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <div class="dropdown">
+            <a href="#" class="active">About Us</a>
+            <div class="dropdown-menu">
+                <a href="history.html">History</a>
+                <a href="vision.html">Vision & Mission</a>
+                <a href="KUAct.html">Khulna University Act</a>
+                <a href="research-strategy.html">Research Strategy</a>
+            </div>
+        </div>
+        <a href="#">Administration</a>
+        <a href="#">Academics</a>
+        <a href="#">Admission</a>
+        <a href="#">Centers & Cells</a>
+        <a href="#">Facilities</a>
+        <a href="#">Research & Publications</a>
+        <a href="#">Tools</a>
+        <a href="#">Support</a>
+    </nav>
+
+    <main>
+        <h1>HISTORY</h1>
+        <p>
+            Khulna University was established in 1991. There are 8 schools and 29 disciplines under these schools.
+            The most promising characteristic of this university is that it is free from student politics.
+            No session jam in academic activities. A big number of professors, associate professors and assistant
+            professors are working as faculty members of various disciplines. Many national and international
+            research projects are ongoing. Student accommodation facility is very well. There are three halls for
+            male students and two halls for female students. Library and laboratory facility is also of high quality.
+            Students and staff are provided with transport facility. Overall student quality of this university is
+            very satisfying. Graduates of this university are working all over the world with a lot of fame.
+        </p>
+    </main>
+
+    <footer>
+        &copy; 2025 Khulna University. All rights reserved.
+    </footer>
+
+</body>
+</html>

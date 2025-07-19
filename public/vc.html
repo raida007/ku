@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vice-Chancellor - University Administration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 1rem;
+        }
+        nav {
+            background-color: #004080;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav ul li a {
+            display: block;
+            padding: 1rem;
+            color: white;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #00264d;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: #004080;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+        }
+        .has-dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1, h2, h3 {
+            color: #003366;
+        }
+        .profile {
+            display: flex;
+            margin: 2rem 0;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+        .profile-image {
+            width: 200px;
+            height: 250px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ddd;
+        }
+        .profile-content {
+            flex: 1;
+        }
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>University Name</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="has-dropdown">
+                <a href="#">Administration</a>
+                <div class="dropdown-menu">
+                    <a href="vice-chancellor.html">Vice-Chancellor</a>
+                    <a href="pro-vice-chancellor.html">Pro-Vice-Chancellor</a>
+                    <a href="treasurer.html">Treasurer</a>
+                    <a href="registrar.html">Registrar</a>
+                    <a href="deans.html">Deans</a>
+                </div>
+            </li>
+            <li><a href="#">Academics</a></li>
+            <li><a href="#">Research</a></li>
+            <li><a href="#">Admissions</a></li>
+            <li><a href="#">Campus Life</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Vice-Chancellor</h2>
+        
+        <div class="profile">
+            <div class="profile-image">
+                <img src="vc.jpg" alt="Vice-Chancellor Professor Jane Smith" width="200" height="250">
+            </div>
+            <div class="profile-content">
+                <h3>Professor Jane Smith</h3>
+                <p><strong>Vice-Chancellor and President</strong></p>
+                <p>Professor Jane Smith has been the Vice-Chancellor of University Name since 2022. She brings extensive experience in higher education leadership and is committed to advancing our university's mission of excellence in education, research, and community engagement.</p>
+                <p>As Vice-Chancellor, Professor Smith serves as the chief executive officer and principal academic officer of the university, responsible for overall leadership and management.</p>
+            </div>
+        </div>
+        
+        <h3>Role and Responsibilities</h3>
+        <p>The Vice-Chancellor is the principal academic and administrative officer of the University and serves as its chief executive. Key responsibilities include:</p>
+        <ul>
+            <li>Providing strategic leadership and vision for the university</li>
+            <li>Representing the university to external stakeholders and partners</li>
+            <li>Overseeing all academic, administrative, and financial functions</li>
+            <li>Implementing decisions of the University Council and Senate</li>
+            <li>Leading the development and execution of the university's strategic plan</li>
+            <li>Managing the university's resources to ensure long-term sustainability</li>
+        </ul>
+        
+        <h3>Contact Information</h3>
+        <p>Office of the Vice-Chancellor<br>
+        Administration Building, Room 101<br>
+        Email: vice-chancellor@university.edu<br>
+        Phone: (123) 456-7890</p>
+    </main>
+    <footer>
+        <p>&copy; 2025 University Name. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission 2023-2024 - Khulna University</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f0f0;
+        }
+ 
+        
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 15px 10%;
+            background-color: #fff;
+        }
+        
+        .logo {
+            width: 100px;
+            margin-right: 20px;
+        }
+        
+        .title-container h1 {
+            color: #1d4e89;
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+        
+        .title-container h2 {
+            color: #e78c11;
+            font-size: 24px;
+        }
+        
+        .navbar {
+            background-color: #1d4e89;
+            padding: 15px 10%;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .nav-links {
+            display: flex;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-right: 25px;
+            font-weight: bold;
+        }
+        
+        .active {
+            text-decoration: underline !important;
+        }
+        
+        .apply-btn {
+            background-color: #c27c36;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .main-content {
+            padding: 20px 10%;
+        }
+        
+        .page-title {
+            background-color: #00a0df;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+        
+        .admission-info {
+            background-color: white;
+            padding: 25px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .admission-info h2 {
+            color: #1d4e89;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e78c11;
+            padding-bottom: 10px;
+        }
+        
+        .admission-info p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .features-list {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        
+        .important-dates {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-left: 5px solid #e78c11;
+            margin-bottom: 20px;
+        }
+        
+        .important-dates h3 {
+            color: #d32f2f;
+            margin-bottom: 15px;
+        }
+        
+        .dates-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        .dates-table th, .dates-table td {
+            border: 1px solid #e0e0e0;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .dates-table th {
+            background-color: #1d4e89;
+            color: white;
+        }
+        
+        .dates-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .eligibility {
+            margin-bottom: 20px;
+        }
+        
+        .eligibility h3 {
+            color: #1d4e89;
+            margin-bottom: 15px;
+        }
+        
+        .eligibility ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .eligibility li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        .units-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .unit-card {
+            flex: 1 1 45%;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .unit-a {
+            background-color: #e3f2fd;
+            border-left: 5px solid #2196f3;
+        }
+        
+        .unit-b {
+            background-color: #ffebee;
+            border-left: 5px solid #f44336;
+        }
+        
+        .unit-c {
+            background-color: #fff8e1;
+            border-left: 5px solid #ffc107;
+        }
+        
+        .unit-d {
+            background-color: #e8f5e9;
+            border-left: 5px solid #4caf50;
+        }
+        
+        .unit-card h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .unit-card p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        .apply-now-btn {
+            display: block;
+            background-color: #c27c36;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="logo.png" alt="Khulna University Logo" class="logo">
+        <div class="title-container">
+            <h1>Online Admission System</h1>
+            <h2>Khulna University</h2>
+        </div>
+    </header>
+    
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#" class="active">Admission 2023-2024</a>
+            <a href="#">Notice Board</a>
+            <a href="#">Important Links</a>
+            <a href="#">Contact</a>
+        </div>
+        <a href="admissionfrm.html" class="apply-btn">Apply</a>
+    </nav>
+    
+    <div class="main-content">
+        <div class="page-title">
+            ADMISSION INFORMATION 2023-2024
+        </div>
+        
+        <div class="admission-info">
+            <h2>Undergraduate Admission Guidelines</h2>
+            
+            <div class="important-dates">
+                <h3>Important Dates for 2023-2024 Admission</h3>
+                <table class="dates-table">
+                    <thead>
+                        <tr>
+                            <th>Event</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Online Application Start</td>
+                            <td>August 15, 2023</td>
+                        </tr>
+                        <tr>
+                            <td>Online Application End</td>
+                            <td>September 10, 2023</td>
+                        </tr>
+                        <tr>
+                            <td>Admit Card Download</td>
+                            <td>September 15-20, 2023</td>
+                        </tr>
+                        <tr>
+                            <td>Admission Test (Unit A)</td>
+                            <td>October 5, 2023</td>
+                        </tr>
+                        <tr>
+                            <td>Admission Test (Unit B)</td>
+                            <td>October 6, 2023</td>
+                        </tr>
+                        <tr>
+                            <td>Admission Test (Unit C)</td>
+                            <td>October 7, 2023</td>
+                        </tr>
+                        <tr>
+                            <td>Admission Test (Unit D)</td>
+                            <td>October 8, 2023</td>
+                        </tr>
+                        <tr>
+                            <td>Result Publication</td>
+                            <td>October 20, 2023</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="eligibility">
+                <h3>Eligibility Criteria</h3>
+                <p>Candidates must fulfill the following requirements:</p>
+                <ul>
+                    <li>Must have passed SSC/equivalent in 2019 or later and HSC/equivalent in 2021 or later</li>
+                    <li>Minimum GPA of 6.5 (combined SSC and HSC) with at least 3.0 in each examination</li>
+                    <li>For Science Group: At least GPA 3.5 in Mathematics and Physics in HSC</li>
+                    <li>For Commerce Group: At least GPA 3.5 in Business Management and Accounting</li>
+                    <li>For Humanities Group: At least GPA 3.5 in relevant subjects</li>
+                </ul>
+            </div>
+            
+            <div class="units-info">
+                <div class="unit-card unit-a">
+                    <h3>A Unit (Science, Engineering & Technology School)</h3>
+                    <p>For candidates from Science background</p>
+                    <p>Subjects: Mathematics, Physics, Chemistry, Computer Science</p>
+                    <p>Test Format: MCQ (100 marks) + Written (50 marks)</p>
+                </div>
+                
+                <div class="unit-card unit-b">
+                    <h3>B Unit (Life Science School)</h3>
+                    <p>For candidates from Science background with Biology</p>
+                    <p>Subjects: Biology, Chemistry, Physics</p>
+                    <p>Test Format: MCQ (100 marks) + Written (50 marks)</p>
+                </div>
+                
+                <div class="unit-card unit-c">
+                    <h3>C Unit (Arts, Humanities & Social Science Schools)</h3>
+                    <p>For candidates from all backgrounds</p>
+                    <p>Subjects: General Knowledge, English, Bengali</p>
+                    <p>Test Format: MCQ (100 marks) + Written (50 marks)</p>
+                </div>
+                
+                <div class="unit-card unit-d">
+                    <h3>D Unit (Business Administration School)</h3>
+                    <p>For candidates from all backgrounds</p>
+                    <p>Subjects: Mathematics, English, General Knowledge</p>
+                    <p>Test Format: MCQ (100 marks) + Written (50 marks)</p>
+                </div>
+            </div>
+            
+            <a href="#" class="apply-now-btn">APPLY NOW</a>
+        </div>
+    </div>
+</body>
+</html>

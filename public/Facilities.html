@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facilities - Khulna University</title>
+
+  <head>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a href="home.html">Home</a></li>
+  
+</ul>
+
+</body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #e5e6ea 0%, #61a3cc 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .university-logo {
+            width: 80px;
+            height: 80px;
+            background: #fff;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: rgb(14, 14, 14);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            color: rgba(17, 17, 17, 0.9);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .facility-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(228, 225, 225, 0.978);
+            transform: translateY(0);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .facility-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #e7e8ee, #764ba2);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .features-list {
+    background-color: rgba(255, 255, 255, 0.8); /* light background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* optional soft shadow */
+}
+
+
+        .facility-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(247, 245, 245, 0.952);
+        }
+
+        .facility-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .facility-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .facility-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .facility-description {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .features-list li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+            color: #555;
+        }
+
+ .features-list li::before {
+      content: '✓';
+    position: absolute;
+     left: 0;
+     color: #0c0c0c18;
+     font-weight: bold;
+}
+.features-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #000000; /* Solid black */
+    font-weight: bold;
+}
+
+
+        .btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .stats-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .contact-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-title {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            padding: 20px;
+            background: #f8f9ff;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 20px;
+            width: 80%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #667eea;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .facilities-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .facility-card {
+                padding: 20px;
+            }
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="fade-in">
+             <div class="logo-container">
+        <div class="logo">
+            <img src="logo.png" alt="Khulna University Logo">
+            <div class="logo-text">
+                <h1>KHULNA UNIVERSITY</h1>
+                <h2>Excellence in Higher Education</h2>
+            </div>
+        </div>
+    </div>
+        </header>
+
+        <div class="stats-section fade-in">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Academic Buildings</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Residential Halls</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Modern Facilities</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">20,000+</div>
+                    <div class="stat-label">Students Served</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="facilities-grid">
+            <div class="facility-card fade-in">
+                <div class="facility-icon">📚</div>
+                <h2 class="facility-title">Central Library</h2>
+                <p class="facility-description">State-of-the-art library facility with extensive collection and modern research resources.</p>
+                <ul class="features-list">
+                    <li>Over 100,000 books and journals</li>
+                    <li>Digital library with e-books and online databases</li>
+                    <li>24/7 reading rooms with AC</li>
+                    <li>Computer lab with high-speed internet</li>
+                    <li>Group study rooms</li>
+                    <li>Photocopy and printing services</li>
+                </ul>
+                <button class="btn" onclick="openModal('libraryModal')">View Details</button>
+            </div>
+
+            <div class="facility-card fade-in">
+                <div class="facility-icon">🏠</div>
+                <h2 class="facility-title">Residential Halls</h2>
+                <p class="facility-description">Comfortable and secure accommodation for students with modern amenities.</p>
+                <ul class="features-list">
+                    <li>8 residential halls (4 for male, 4 for female)</li>
+                    <li>Single and double occupancy rooms</li>
+                    <li>24/7 security and housekeeping</li>
+                    <li>Common rooms with TV and recreation</li>
+                    <li>WiFi connectivity throughout</li>
+                    <li>Laundry and canteen facilities</li>
+                </ul>
+                <button class="btn" onclick="openModal('hallModal')">View Details</button>
+            </div>
+
+            <div class="facility-card fade-in">
+                <div class="facility-icon">🚌</div>
+                <h2 class="facility-title">Transportation</h2>
+                <p class="facility-description">Reliable and safe transportation services connecting campus with the city.</p>
+                <ul class="features-list">
+                    <li>15 university buses covering major routes</li>
+                    <li>Regular services to Khulna city center</li>
+                    <li>Special transport for field trips</li>
+                    <li>Air-conditioned buses available</li>
+                    <li>Student-friendly fare structure</li>
+                    <li>Real-time bus tracking system</li>
+                </ul>
+                <button class="btn" onclick="openModal('busModal')">View Routes</button>
+            </div>
+
+            <div class="facility-card fade-in">
+                <div class="facility-icon">🏥</div>
+                <h2 class="facility-title">Medical Center</h2>
+                <p class="facility-description">Comprehensive healthcare services for students, faculty, and staff.</p>
+                <ul class="features-list">
+                    <li>24/7 emergency medical services</li>
+                    <li>Qualified doctors and nursing staff</li>
+                    <li>Pharmacy with essential medicines</li>
+                    <li>Regular health check-up programs</li>
+                    <li>Ambulance service available</li>
+                    <li>Mental health counseling</li>
+                </ul>
+                <button class="btn" onclick="openModal('medicalModal')">Learn More</button>
+            </div>
+
+            <div class="facility-card fade-in">
+                <div class="facility-icon">🏃</div>
+                <h2 class="facility-title">Sports Complex</h2>
+                <p class="facility-description">Modern sports facilities promoting physical fitness and recreational activities.</p>
+                <ul class="features-list">
+                    <li>Multi-purpose indoor sports hall</li>
+                    <li>Football and cricket grounds</li>
+                    <li>Basketball and volleyball courts</li>
+                    <li>Modern gymnasium with equipment</li>
+                    <li>Swimming pool (under construction)</li>
+                    <li>Athletics track and field</li>
+                </ul>
+                <button class="btn" onclick="openModal('sportsModal')">Explore Sports</button>
+            </div>
+
+            <div class="facility-card fade-in">
+                <div class="facility-icon">🍽️</div>
+                <h2 class="facility-title">Dining Facilities</h2>
+                <p class="facility-description">Multiple dining options providing nutritious and affordable meals.</p>
+                <ul class="features-list">
+                    <li>Central cafeteria with 500+ seating</li>
+                    <li>Multiple food courts across campus</li>
+                    <li>Halal and vegetarian options</li>
+                    <li>Affordable student meal plans</li>
+                    <li>24/7 tea stalls and snack bars</li>
+                    <li>Catering services for events</li>
+                </ul>
+                <button class="btn" onclick="openModal('diningModal')">View Menu</button>
+            </div>
+
+            <div class="facility-card fade-in">
+                <div class="facility-icon">💻</div>
+                <h2 class="facility-title">IT Services</h2>
+                <p class="facility-description">Cutting-edge technology infrastructure supporting academic and administrative needs.</p>
+                <ul class="features-list">
+                    <li>Campus-wide WiFi coverage</li>
+                    <li>Computer labs with latest software</li>
+                    <li>High-speed internet connectivity</li>
+                    <li>Student email and cloud services</li>
+                    <li>Online learning management system</li>
+                    <li>24/7 technical support</li>
+                </ul>
+                <button class="btn" onclick="openModal('itModal')">Tech Support</button>
+            </div>
+
+            <div class="facility-card fade-in">
+                <div class="facility-icon">🎭</div>
+                <h2 class="facility-title">Cultural Center</h2>
+                <p class="facility-description">Vibrant cultural facilities fostering arts, creativity, and cultural exchange.</p>
+                <ul class="features-list">
+                    <li>1000-seat auditorium with modern acoustics</li>
+                    <li>Art gallery and exhibition spaces</li>
+                    <li>Music and dance practice rooms</li>
+                    <li>Drama and theater facilities</li>
+                    <li>Cultural event organization</li>
+                    <li>Traditional and modern performance spaces</li>
+                </ul>
+                <button class="btn" onclick="openModal('culturalModal')">Cultural Events</button>
+            </div>
+        </div>
+
+        <div class="contact-section fade-in">
+            <h2 class="contact-title">Need More Information?</h2>
+            <p>Contact our facilities management team for any inquiries or assistance.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>📞 Phone</strong><br>
+                    +880-41-720171-5
+                </div>
+                <div class="contact-item">
+                    <strong>📧 Email</strong><br>
+                    facilities@ku.ac.bd
+                </div>
+                <div class="contact-item">
+                    <strong>📍 Address</strong><br>
+                    Khulna University<br>
+                    Khulna-9208, Bangladesh
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="libraryModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('libraryModal')">&times;</span>
+            <h2>Central Library - Detailed Information</h2>
+            <h3>Collections & Resources</h3>
+            <p>Our library houses an extensive collection of over 100,000 books, journals, and research materials covering all academic disciplines. The digital library provides access to international databases, e-journals, and e-books.</p>
+            
+            <h3>Services</h3>
+            <p>• Reference and research assistance<br>
+            • Inter-library loan services<br>
+            • Thesis and dissertation binding<br>
+            • Book reservation system<br>
+            • Orientation programs for new students</p>
+            
+            <h3>Operating Hours</h3>
+            <p>Monday - Thursday: 8:00 AM - 10:00 PM<br>
+            Friday: 8:00 AM - 12:00 PM, 2:00 PM - 10:00 PM<br>
+            Saturday - Sunday: 9:00 AM - 6:00 PM</p>
+        </div>
+    </div>
+
+    <div id="hallModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('hallModal')">&times;</span>
+            <h2>Residential Halls - Accommodation Details</h2>
+            <h3>Male Halls</h3>
+            <p>• Lalon Shah Hall (300 students)<br>
+            • Rabindranath Tagore Hall (250 students)<br>
+            • Kazi Nazrul Islam Hall (280 students)<br>
+            • Jagadish Chandra Bose Hall (200 students)</p>
+            
+            <h3>Female Halls</h3>
+            <p>• Begum Rokeya Hall (250 students)<br>
+            • Pritilata Waddedar Hall (200 students)<br>
+            • Fatema Hall (180 students)<br>
+            • Sufia Kamal Hall (220 students)</p>
+            
+            <h3>Room Facilities</h3>
+            <p>Each room includes bed, study table, chair, wardrobe, fan, and attached bathroom. Common facilities include TV rooms, study halls, and prayer rooms.</p>
+        </div>
+    </div>
+
+    <div id="busModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('busModal')">&times;</span>
+            <h2>University Transportation - Routes & Schedule</h2>
+            <h3>Main Routes</h3>
+            <p>• Route 1: KU Campus - Khulna City Center - Railway Station<br>
+            • Route 2: KU Campus - New Market - Shipyard<br>
+            • Route 3: KU Campus - Sonadanga - Daulatpur<br>
+            • Route 4: KU Campus - Khalishpur - Boyra</p>
+            
+            <h3>Schedule</h3>
+            <p>Buses run every 30 minutes from 7:00 AM to 9:00 PM. Special late-night services available during exam periods.</p>
+            
+            <h3>Fare Structure</h3>
+            <p>Student fare: 10-20 BDT depending on distance<br>
+            Staff/Faculty: 15-25 BDT<br>
+            Monthly passes available at discounted rates</p>
+        </div>
+    </div>
+
+    <div id="medicalModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('medicalModal')">&times;</span>
+            <h2>Medical Center - Healthcare Services</h2>
+            <h3>Medical Staff</h3>
+            <p>• 2 Full-time doctors<br>
+            • 4 Registered nurses<br>
+            • 1 Pharmacist<br>
+            • Emergency medical technicians</p>
+            
+            <h3>Services Provided</h3>
+            <p>• General consultation<br>
+            • Emergency care<br>
+            • Basic laboratory tests<br>
+            • First aid and wound care<br>
+            • Health education programs<br>
+            • Vaccination services</p>
+            
+            <h3>Contact Emergency</h3>
+            <p>Emergency Hotline: +880-41-720199<br>
+            Medical Center: Ext. 333</p>
+        </div>
+    </div>
+
+    <div id="sportsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('sportsModal')">&times;</span>
+            <h2>Sports Complex - Facilities & Programs</h2>
+            <h3>Indoor Facilities</h3>
+            <p>• Badminton courts (4)<br>
+            • Table tennis (6 tables)<br>
+            • Chess and carom boards<br>
+            • Gymnasium with modern equipment<br>
+            • Yoga and aerobics room</p>
+            
+            <h3>Outdoor Facilities</h3>
+            <p>• Football ground with floodlights<br>
+            • Cricket ground<br>
+            • Basketball courts (2)<br>
+            • Volleyball courts (3)<br>
+            • Tennis court (1)<br>
+            • 400m athletics track</p>
+            
+            <h3>Sports Programs</h3>
+            <p>Regular coaching programs, inter-departmental tournaments, and participation in national university sports competitions.</p>
+        </div>
+    </div>
+
+    <div id="diningModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('diningModal')">&times;</span>
+            <h2>Dining Facilities - Food Services</h2>
+            <h3>Central Cafeteria Menu</h3>
+            <p><strong>Breakfast (7:00-10:00 AM):</strong><br>
+            Paratha, bread, egg curry, dal, tea - 25-40 BDT</p>
+            
+            <p><strong>Lunch (12:00-3:00 PM):</strong><br>
+            Rice, dal, vegetable curry, fish/meat curry - 60-80 BDT</p>
+            
+            <p><strong>Dinner (6:00-9:00 PM):</strong><br>
+            Rice, dal, curry, vegetables - 50-70 BDT</p>
+            
+            <h3>Food Courts</h3>
+            <p>Multiple food vendors offering snacks, beverages, and fast food items throughout the day.</p>
+        </div>
+    </div>
+
+    <div id="itModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('itModal')">&times;</span>
+            <h2>IT Services - Technology Support</h2>
+            <h3>Network Infrastructure</h3>
+            <p>• Campus-wide fiber optic network<br>
+            • 1 Gbps internet backbone<br>
+            • 500+ WiFi access points<br>
+            • Network security and monitoring</p>
+            
+            <h3>Student Services</h3>
+            <p>• Free email accounts (@student.ku.ac.bd)<br>
+            • Online course registration<br>
+            • Digital library access<br>
+            • Cloud storage (50GB per student)<br>
+            • Software licenses for academic use</p>
+            
+            <h3>Support</h3>
+            <p>IT Helpdesk: +880-41-720180<br>
+            Email: support@ku.ac.bd<br>
+            Location: Computer Center, Ground Floor</p>
+        </div>
+    </div>
+
+    <div id="culturalModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('culturalModal')">&times;</span>
+            <h2>Cultural Center - Arts & Events</h2>
+            <h3>Facilities</h3>
+            <p>• Main auditorium (1000 seats) with professional sound and lighting<br>
+            • Seminar hall (200 seats)<br>
+            • Art gallery with rotating exhibitions<br>
+            • Music practice rooms with instruments<br>
+            • Dance studio with mirrors and sound system</p>
+            
+            <h3>Regular Programs</h3>
+            <p>• Cultural week celebrations<br>
+            • Literary festivals<br>
+            • Art competitions and exhibitions<br>
+            • Musical and dance performances<br>
+            • Drama and theater productions<br>
+            • Film screenings and cultural documentaries</p>
+            
+            <h3>Student Organizations</h3>
+            <p>Various cultural clubs and societies organize events throughout the year, promoting Bangladeshi culture and arts.</p>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
+
+        // Add scroll animations
+        function animateOnScroll() {
+            const cards = document.querySelectorAll('.facility-card');
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                const cardVisible = 150;
+                
+                if (cardTop < window.innerHeight - cardVisible) {
+                    card.classList.add('fade-in');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+
+        // Add loading states to buttons
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const originalText = this.textContent;
+                this.innerHTML = '<span class="loading"></span> Loading...';
+                this.disabled = true;
+                
+                setTimeout(() => {
+                    this.textContent = originalText;
+                    this.disabled = false;
+                }, 1000);
+            });
+        });
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add keyboard navigation for modals
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const openModals = document.querySelectorAll('.modal[style*="block"]');
+                openModals.forEach(modal => {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

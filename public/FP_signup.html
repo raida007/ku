@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Khulna University</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 0.75rem;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #5a6fd8;
+        }
+
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .links {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .links a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        .error {
+            background: #ffe6e6;
+            color: #d00;
+            padding: 0.75rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            border: 1px solid #ffcccc;
+        }
+
+        .success {
+            background: #e6ffe6;
+            color: #006600;
+            padding: 0.75rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            border: 1px solid #ccffcc;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .note {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 0.25rem;
+        }
+
+        @media (max-width: 500px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Join Khulna University</h1>
+            <p>Create your account to access the university portal</p>
+        </div>
+
+        <div id="message"></div>
+
+        <form id="signupForm">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+                <div class="note">Use your university email if available</div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="role">Role</label>
+                    <select id="role" name="role" required>
+                        <option value="">Select Role</option>
+                       
+                        <option value="faculty">Faculty</option>
+                        
+                    </select>
+                </div>
+
+                <div class="form-group" id="studentIdGroup" style="display: none;">
+                    <label for="studentId">Student ID</label>
+                    <input type="text" id="studentId" name="studentId" placeholder="YYYY-XX-XXXX">
+                    <div class="note">Format: 2020-01-1234</div>
+                </div>
+            </div>
+
+            <div class="form-group" id="departmentGroup">
+                <label for="department">Department</label>
+                <select id="department" name="department">
+                    <option value="">Select Department</option>
+                    <option value="Computer Science and Engineering">Computer Science and Engineering</option>
+                    <option value="Electrical and Electronic Engineering">Electrical and Electronic Engineering</option>
+                    <option value="Civil Engineering">Civil Engineering</option>
+                    <option value="Mechanical Engineering">Mechanical Engineering</option>
+                    <option value="Business Administration">Business Administration</option>
+                    <option value="Economics">Economics</option>
+                    <option value="English">English</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group" id="semesterGroup" style="display: none;">
+                <label for="semester">Current Semester</label>
+                <select id="semester" name="semester">
+                    <option value="">Select Semester</option>
+                    <option value="1st Year 1st Semester">1st Year 1st Semester</option>
+                    <option value="1st Year 2nd Semester">1st Year 2nd Semester</option>
+                    <option value="2nd Year 1st Semester">2nd Year 1st Semester</option>
+                    <option value="2nd Year 2nd Semester">2nd Year 2nd Semester</option>
+                    <option value="3rd Year 1st Semester">3rd Year 1st Semester</option>
+                    <option value="3rd Year 2nd Semester">3rd Year 2nd Semester</option>
+                    <option value="4th Year 1st Semester">4th Year 1st Semester</option>
+                    <option value="4th Year 2nd Semester">4th Year 2nd Semester</option>
+                    <option value="Masters">Masters</option>
+                    <option value="PhD">PhD</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <div class="note">Minimum 6 characters</div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+
+            <button type="submit" class="btn" id="signupBtn">Create Account</button>
+            
+            <div class="loading" id="loading">
+                <p>Creating account...</p>
+            </div>
+        </form>
+
+        <div class="links">
+            <p>Already have an account? <a href="/login">Sign in here</a></p>
+            <p><a href="/">Back to Home</a></p>
+        </div>
+    </div>
+
+    <script>
+        const signupForm = document.getElementById('signupForm');
+        const messageDiv = document.getElementById('message');
+        const signupBtn = document.getElementById('signupBtn');
+        const loading = document.getElementById('loading');
+        const roleSelect = document.getElementById('role');
+
+        function showMessage(message, type = 'error') {
+            messageDiv.innerHTML = `<div class="${type}">${message}</div>`;
+            setTimeout(() => {
+                messageDiv.innerHTML = '';
+            }, 5000);
+        }
+
+        // Show/hide fields based on role
+        roleSelect.addEventListener('change', function() {
+            const role = this.value;
+            const studentIdGroup = document.getElementById('studentIdGroup');
+            const semesterGroup = document.getElementById('semesterGroup');
+            const departmentGroup = document.getElementById('departmentGroup');
+            
+            if (role === 'student') {
+                studentIdGroup.style.display = 'block';
+                semesterGroup.style.display = 'block';
+                departmentGroup.style.display = 'block';
+                document.getElementById('studentId').required = true;
+                document.getElementById('semester').required = true;
+                document.getElementById('department').required = true;
+            } else if (role === 'faculty') {
+                studentIdGroup.style.display = 'none';
+                semesterGroup.style.display = 'none';
+                departmentGroup.style.display = 'block';
+                document.getElementById('studentId').required = false;
+                document.getElementById('semester').required = false;
+                document.getElementById('department').required = true;
+            } else {
+                studentIdGroup.style.display = 'none';
+                semesterGroup.style.display = 'none';
+                departmentGroup.style.display = 'none';
+                document.getElementById('studentId').required = false;
+                document.getElementById('semester').required = false;
+                document.getElementById('department').required = false;
+            }
+        });
+
+        signupForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(signupForm);
+            const data = Object.fromEntries(formData);
+
+            // Validation
+            if (data.password !== data.confirmPassword) {
+                showMessage('Passwords do not match');
+                return;
+            }
+
+            if (data.password.length < 6) {
+                showMessage('Password must be at least 6 characters long');
+                return;
+            }
+
+            // Remove confirmPassword from data
+            delete data.confirmPassword;
+
+            signupBtn.disabled = true;
+            signupBtn.textContent = 'Creating Account...';
+            loading.style.display = 'block';
+
+            try {
+                const response = await fetch('/api/auth/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    // Store token in localStorage
+                    localStorage.setItem('token', result.token);
+                    localStorage.setItem('user', JSON.stringify(result.user));
+                    
+                    showMessage('Account created successfully! Redirecting...', 'success');
+                    
+                    // Redirect to dashboard
+                    setTimeout(() => {
+                        window.location.href = '/dashboard';
+                    }, 1500);
+                } else {
+                    if (result.errors && Array.isArray(result.errors)) {
+                        showMessage(result.errors.join(', '));
+                    } else {
+                        showMessage(result.message || 'Signup failed');
+                    }
+                }
+            } catch (error) {
+                console.error('Signup error:', error);
+                showMessage('Network error. Please try again.');
+            } finally {
+                signupBtn.disabled = false;
+                signupBtn.textContent = 'Create Account';
+                loading.style.display = 'none';
+            }
+        });
+
+        // Check if user is already logged in
+        if (localStorage.getItem('token')) {
+            window.location.href = '/dashboard';
+        }
+    </script>
+</body>
+</html>

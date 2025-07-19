@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research | Khulna University</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 15px 0;
+        }
+        
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 80px;
+            margin-right: 15px;
+        }
+        
+        .logo-text h1 {
+            color: #1a4674;
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+        
+        .logo-text h2 {
+            color: #e38b29;
+            font-size: 22px;
+        }
+        
+        /* Navigation Styles */
+        .main-nav {
+            background-color: #1a4674;
+            padding: 10px 0;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-right: 25px;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #e38b29;
+        }
+        
+        /* Main Content Styles */
+        .main-content {
+            padding: 40px 0;
+        }
+        
+        .page-header {
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #1a4674;
+        }
+        
+        .page-header h1 {
+            color: #1a4674;
+            font-size: 32px;
+        }
+        
+        .research-section {
+            margin-bottom: 40px;
+        }
+        
+        .research-section h2 {
+            color: #1a4674;
+            font-size: 24px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .research-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .research-category {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .research-category h3 {
+            color: #1a4674;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        .research-category p {
+            margin-bottom: 15px;
+        }
+        
+        .research-links {
+            list-style: none;
+        }
+        
+        .research-links li {
+            margin-bottom: 8px;
+        }
+        
+        .research-links a {
+            color: #1a4674;
+            text-decoration: none;
+            display: block;
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
+            transition: color 0.3s;
+        }
+        
+        .research-links a:hover {
+            color: #e38b29;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #1a4674;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #e38b29;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: #1a4674;
+            color: #fff;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .footer-section h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #e38b29;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #e38b29;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 5px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="logo.png" alt="Khulna University Logo">
+                <div class="logo-text">
+                    <h1>Khulna University</h1>
+                    <h2>Knowledge for Development</h2>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <nav class="main-nav">
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="history.html">About</a></li>
+                <li><a href="#">Faculties</a></li>
+                <li><a href="#">Research</a></li>
+                <li><a href="#">Admission</a></li>
+                <li><a href="#">Library</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Research at Khulna University</h1>
+            </div>
+            
+            <div class="research-section">
+                <h2>Research Focus Areas</h2>
+                <p>Khulna University is committed to advancing knowledge through innovative research across diverse disciplines. Our research initiatives address regional and global challenges while contributing to sustainable development.</p>
+                
+                <div class="research-categories">
+                    <div class="research-category">
+                        <h3>Science and Technology</h3>
+                        <p>Focusing on technological innovations, environmental science, and sustainable solutions for the southwestern region of Bangladesh.</p>
+                        <ul class="research-links">
+                            <li><a href="#">Environmental Science Research</a></li>
+                            <li><a href="#">Information Technology and Computing</a></li>
+                            <li><a href="#">Mathematics and Statistics</a></li>
+                            <li><a href="#">Biotechnology and Genetic Engineering</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="research-category">
+                        <h3>Social Sciences and Humanities</h3>
+                        <p>Investigating social, cultural, and economic aspects of development, with special focus on the unique context of the Sundarbans region.</p>
+                        <ul class="research-links">
+                            <li><a href="#">Social Science Studies</a></li>
+                            <li><a href="#">Economic Development Research</a></li>
+                            <li><a href="#">Cultural and Historical Studies</a></li>
+                            <li><a href="#">Language and Communication Research</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="research-category">
+                        <h3>Life Sciences and Agriculture</h3>
+                        <p>Addressing challenges in agriculture, fisheries, forestry, and biodiversity conservation in the coastal ecosystems.</p>
+                        <ul class="research-links">
+                            <li><a href="#">Agricultural Innovation Research</a></li>
+                            <li><a href="#">Aquatic Resources Management</a></li>
+                            <li><a href="#">Biodiversity and Conservation</a></li>
+                            <li><a href="#">Forestry and Environmental Management</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="research-section">
+                <h2>Research Centers and Institutes</h2>
+                <p>Khulna University hosts several specialized research centers that facilitate interdisciplinary research and collaboration with national and international partners.</p>
+                
+                <div class="research-categories">
+                    <div class="research-category">
+                        <h3>Institute of Environmental Science</h3>
+                        <p>Dedicated to research on environmental challenges and sustainable solutions for the southwestern coastal region of Bangladesh.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                    
+                    <div class="research-category">
+                        <h3>Center for Coastal Area Studies</h3>
+                        <p>Focuses on research related to coastal ecosystems, climate change adaptation, and sustainable development of coastal communities.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                    
+                    <div class="research-category">
+                        <h3>Innovation and Technology Transfer Center</h3>
+                        <p>Facilitates the development and commercialization of innovative technologies and promotes university-industry collaboration.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="research-section">
+                <h2>Publications and Journals</h2>
+                <p>Khulna University publishes several academic journals and research reports to disseminate knowledge and research findings to the wider academic community.</p>
+                
+                <div class="research-categories">
+                    <div class="research-category">
+                        <h3>Khulna University Studies</h3>
+                        <p>A multidisciplinary journal publishing original research across various disciplines.</p>
+                        <a href="#" class="btn">Browse Journal</a>
+                    </div>
+                    
+                    <div class="research-category">
+                        <h3>Journal of Environmental Science and Technology</h3>
+                        <p>Focuses on research related to environmental challenges and technological solutions.</p>
+                        <a href="#" class="btn">Browse Journal</a>
+                    </div>
+                    
+                    <div class="research-category">
+                        <h3>Annual Research Reports</h3>
+                        <p>Comprehensive reports highlighting research activities and achievements across the university.</p>
+                        <a href="#" class="btn">View Reports</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Contact Information</h3>
+                <ul class="footer-links">
+                    <li>Khulna University</li>
+                    <li>Khulna-9208, Bangladesh</li>
+                    <li>Phone: +880-41-720171-3</li>
+                    <li>Email: registrar@ku.ac.bd</li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About KU</a></li>
+                    <li><a href="#">Academic Programs</a></li>
+                    <li><a href="#">Research</a></li>
+                    <li><a href="#">Admission</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Library</a></li>
+                    <li><a href="#">E-Learning</a></li>
+                    <li><a href="#">Research Funding</a></li>
+                    <li><a href="#">Publications</a></li>
+                    <li><a href="#">Alumni</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright container">
+            <p>&copy; 2025 Khulna University. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

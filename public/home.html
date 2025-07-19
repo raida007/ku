@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khulna University</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Top Header */
+        .top-header {
+            background-color: #f5f5f5;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        .top-header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 15px;
+        }
+
+        .social-icons a {
+            color: #333;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+
+        .quick-links a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        .quick-links a:hover {
+            color: #184978;
+        }
+
+        .divider {
+            color: #ccc;
+        }
+
+        /* Logo Section */
+        .logo-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 80px;
+            margin-right: 20px;
+        }
+
+        .logo-text h1 {
+            color: #184978;
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .logo-text h2 {
+            color: #888;
+            margin: 5px 0 0;
+            font-size: 16px;
+            font-weight: normal;
+        }
+
+        /* Main Navigation */
+        .main-nav {
+            background-color: #184978;
+            color: white;
+            position: relative;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-list li {
+            position: relative;
+        }
+
+        .nav-list li a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .nav-list li a:hover {
+            background-color: #0d3964;
+        }
+
+        /* Dropdown Menu Styles */
+        .dropdown-menu {
+            position: absolute;
+            background-color: #f89406;
+            width: 220px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: none;
+        }
+
+        .dropdown-menu a {
+            color: #333;
+            padding: 15px 20px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #e68a06;
+        }
+
+        .has-dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* Arrow indicator for dropdown */
+        .has-dropdown > a:after {
+            content: '\f107';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            margin-left: 5px;
+        }
+
+        /* Slider/Banner Section */
+        .slider {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .slider-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 5px;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .slider-text h2 {
+            margin-top: 0;
+        }
+
+        /* Quick Links Section */
+        .quick-links-section {
+            padding: 50px 0;
+            background-color: #f5f5f5;
+        }
+
+        .links-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 0 15px;
+        }
+
+        .link-box {
+            background: white;
+            padding: 25px;
+            margin: 10px;
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .link-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon {
+            font-size: 30px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .link-box h3 {
+            color: #184978;
+            margin-top: 0;
+        }
+
+        /* News & Events Section */
+        .news-section {
+            padding: 50px 0;
+        }
+
+        .news-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .section-title {
+            color: #184978;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .news-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .news-item {
+            background: white;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            flex: 0 0 calc(33.333% - 20px);
+            max-width: calc(33.333% - 20px);
+        }
+
+        .news-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 20px;
+        }
+
+        .news-content h3 {
+            color: #184978;
+            margin-top: 0;
+        }
+
+        .news-date {
+            color: #888;
+            font-style: italic;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #184978;
+            color: white;
+            padding: 50px 0 0;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 0 15px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            border-bottom: 2px solid #f89406;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .bottom-footer {
+            background-color: #0d3964;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+
+        .bottom-footer p {
+            margin: 0;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .top-header-container {
+                flex-direction: column;
+            }
+
+            .social-icons {
+                margin-bottom: 10px;
+            }
+
+            .logo {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo img {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .logo-text {
+                text-align: center;
+            }
+
+            .nav-list {
+                flex-direction: column;
+            }
+
+            .link-box {
+                flex: 0 0 100%;
+                margin: 10px 0;
+            }
+
+            .news-item {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .footer-column {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Header -->
+    <div class="top-header">
+        <div class="top-header-container">
+          <div class="social-icons">
+            <a href="https://web.facebook.com/ku.ac.bd.official?_rdc=1&_rdr#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+            <div class="quick-links">
+                <a href="#">APA</a>
+                <span class="divider">|</span>
+                <a href="#">NEWS</a>
+                <span class="divider">|</span>
+                <a href="#">CAREER</a>
+                <span class="divider">|</span>
+                <a href="#">NOC/GO</a>
+                <span class="divider">|</span>
+                <a href="Facilities.html">scholarship</a>
+                <span class="divider">|</span>
+                <a href="#">RESOURCES</a>
+                <span class="divider">|</span>
+                <a href="login.html">KU UTILITY</a>
+                 <a href="signup.html">Signup</a>
+                <span class="divider">|</span>
+                <a href="#">D-NOTHI</a>
+                <span class="divider">|</span>
+                <a href="#">OIA</a>
+                <span class="divider">|</span>
+                <a href="#">IQAC</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logo Section -->
+    <div class="logo-container">
+        <div class="logo">
+            <img src="logo.png" alt="Khulna University Logo">
+            <div class="logo-text">
+                <h1>KHULNA UNIVERSITY</h1>
+                <h2>Excellence in Higher Education</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation with Dropdowns -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li class="has-dropdown">
+                  <a href="#">About Us</a>
+                  <div class="dropdown-menu">
+                      <a href="history.html">History</a>
+                      <a href="IQAC.htm">Vision & Mission</a>
+                      <a href="KUAct.html">Khulna University Act</a>
+                      <a href="RIC.htm">Research Strategy</a>
+                  </div>
+                  
+                </li>
+                <li>
+                    <a href="ad.html">Administration</a>
+                    
+                </li>
+                <li >
+                    <a href="academic.html">Academics</a>
+                   
+                </li>
+               <li>   
+                <a href="admission.html">Admission</a> 
+                </li>
+                <li class="has-dropdown" >
+                    <a href="#">Centers & Cells</a>
+                     <div class="dropdown-menu">
+                        <a href="IQAC.htm">IQAC</a>
+                        <a href="IQSSC.htm">IISSCE</a>
+                        <a href="RIC.htm">Research and Innovation Center</a>
+                        
+                    </div>
+                </li>
+
+                  <li class="has-dropdown">
+                    <a href="Facilities.html">Facilities</a>
+                    
+                </li>
+                <li class="has-dropdown">
+                    <a href="#">Tools</a>
+                     <div class="dropdown-menu">
+                        <a href="login.html">Student Portal</a>
+                        <a href="FP_longin.html">Faculty Portal</a>
+                        
+                       
+                    </div>
+                </li>
+                
+               
+                <li class="has-dropdown">
+                    <a href="#">Research & Publications</a>
+                     <div class="dropdown-menu">
+                        <a href="publication.html">Publications</a>
+                        <a href="KUStudies.html">Khulna University Studies</a>
+                        <a href="W.html">conference,seminar,workshop</a>
+                       
+                    </div>
+                </li>
+               
+               
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Slider/Banner Section -->
+    <section class="slider">
+        <img src="a.PNG" alt="Khulna University Campus">
+        <div class="slider-text">
+            <h2>Welcome to Khulna University</h2>
+            <p>Established in 1991, Khulna University is one of the leading public universities in Bangladesh committed to excellence in education and research.</p>
+        </div>
+    </section>
+
+    <!-- Quick Links Section -->
+    <section class="quick-links-section">
+        <div class="links-container">
+            <div class="link-box">
+                <i class="icon">📚</i>
+                <h3>Academic Programs</h3>
+                <p>Explore our undergraduate and graduate programs across various disciplines.</p>
+            </div>
+            <div class="link-box">
+                <i class="icon">🎓</i>
+                <h3>Admission Info</h3>
+                <p>Find information about admission requirements, deadlines, and procedures.</p>
+            </div>
+            <div class="link-box">
+                <i class="icon">🔬</i>
+                <h3>Research</h3>
+                <p>Discover our research initiatives, centers, and opportunities.</p>
+            </div>
+            <div class="link-box">
+                <i class="icon">🏆</i>
+                <h3>Campus Life</h3>
+                <p>Learn about student activities, clubs, and campus facilities.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- News & Events Section -->
+   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Notices</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .view-all {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .view-all:hover {
+            color: #2196F3;
+        }
+
+        .notices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 25px;
+        }
+
+        .notice-card {
+            background: #fafafa;
+            border-radius: 8px;
+            padding: 25px;
+            border-left: 4px solid #2196F3;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .notice-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .notice-title {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .notice-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .download-btn {
+            background: #2196F3;
+            color: white;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+
+        .download-btn:hover {
+            background: #1976D2;
+        }
+
+        .notice-date {
+            color: #999;
+            font-size: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .notices-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Latest Notices</h1>
+            <a href="#" class="view-all">View all notices →</a>
+        </div>
+
+        <div class="notices-grid">
+            <div class="notice-card">
+                <div class="notice-title">
+                    ২০২৪-২৫ শিক্ষাবর্ষের ১ম বর্ষের শিক্ষার্থীদের সদস্যপদ ভর্তিকরণের সময় সূচী সংক্রান্ত বিজ্ঞপ্তি
+                </div>
+                <div class="notice-footer">
+                    <a href="#" class="download-btn">Download</a>
+                    <span class="notice-date">18.06.2025</span>
+                </div>
+            </div>
+
+            <div class="notice-card">
+                <div class="notice-title">
+                    শিক্ষক ও কর্মকর্তা নিয়োগ সংক্রান্ত বিজ্ঞপ্তি এবং নিয়মাবলী
+                </div>
+                <div class="notice-footer">
+                    <a href="#" class="download-btn">Download</a>
+                    <span class="notice-date">18.06.2025</span>
+                </div>
+            </div>
+
+            <div class="notice-card">
+                <div class="notice-title">
+                    ২৪-২৫ ব্যাচের ওরিয়েন্টেশন ও রেজিস্ট্রেশন সংক্রান্ত বিজ্ঞপ্তি
+                </div>
+                <div class="notice-footer">
+                    <a href="#" class="download-btn">Download</a>
+                    <span class="notice-date">17.06.2025</span>
+                </div>
+            </div>
+
+            <div class="notice-card">
+                <div class="notice-title">
+                    সেট স্কুল শিক্ষণীয় ভর্তির নিয়মাবলী আবেদনপত্র এবং সুপারভাইজারর সম্মতি ফরম
+                </div>
+                <div class="notice-footer">
+                    <a href="#" class="download-btn">Download</a>
+                    <span class="notice-date">18.06.2025</span>
+                </div>
+            </div>
+
+            <div class="notice-card">
+                <div class="notice-title">
+                    নিয়োগ বিজ্ঞপ্তি ও নীতিমালা
+                </div>
+                <div class="notice-footer">
+                    <a href="#" class="download-btn">Download</a>
+                    <span class="notice-date">16.06.2025</span>
+                </div>
+            </div>
+
+            <div class="notice-card">
+                <div class="notice-title">
+                    Ph.D ডিগ্রির আবেদনপত্র জমাদানের তারিখ বৃদ্ধি সংক্রান্ত
+                </div>
+                <div class="notice-footer">
+                    <a href="#" class="download-btn">Download</a>
+                    <span class="notice-date">15.06.2025</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add click functionality to download buttons
+        document.querySelectorAll('.download-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Create a temporary feedback element
+                const originalText = this.textContent;
+                this.textContent = 'Downloaded!';
+                this.style.background = '#4CAF50';
+                
+                // Reset after 2 seconds
+                setTimeout(() => {
+                    this.textContent = originalText;
+                    this.style.background = '#2196F3';
+                }, 2000);
+            });
+        });
+
+        // Add subtle animation on page load
+        window.addEventListener('load', function() {
+            const cards = document.querySelectorAll('.notice-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s, transform 0.5s';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+
+   <!-- Footer -->
+<footer>
+  <div class="footer-container">
+      <div class="footer-column">
+          <h3>Contact Us</h3>
+          <ul>
+              <li>Khulna University</li>
+              <li>Khulna-9208, Bangladesh</li>
+              <li>Phone: +880-41-XXXXXXX</li>
+              <li>Email: info@ku.ac.bd</li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+              <li><a href="#">Academic Calendar</a></li>
+              <li><a href="admission.html">Admission</a></li>
+              <li><a href="#">Research</a></li>
+              <li><a href="#">Library</a></li>
+              <li><a href="#">Career</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h3>Resources</h3>
+          <ul>
+              <li><a href="login.html">Student Portal</a></li>
+              <li><a href="#">Faculty Portal</a></li>
+              <li><a href="#">E-Learning</a></li>
+              <li><a href="#">Publications</a></li>
+              <li><a href="#">Downloads</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h3>Our Location</h3>
+          <iframe 
+              src="https://www.google.com/maps/place/Khulna+University/@22.8022039,89.5313482,17z/data=!3m1!4b1!4m6!3m5!1s0x39ff85490c50d28f:0xadae6f7b93b7069a!8m2!3d22.8022039!4d89.5339231!16zL20vMDZsenhy?hl=en-US&entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoASAFQAw%3D%3D" 
+              width="100%" 
+              height="200" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+      </div>
+  </div>
+  <div class="bottom-footer">
+      <p>&copy; 2025 Khulna University. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+    // JavaScript for click functionality on mobile
+    document.addEventListener('DOMContentLoaded', function() {
+        const dropdownToggle = document.querySelectorAll('.has-dropdown > a');
+        
+        // For mobile devices, make dropdown work on click instead of hover
+        if (window.innerWidth < 768) {
+            dropdownToggle.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const dropdownMenu = this.nextElementSibling;
+                    
+                    // Close all other open dropdowns
+                    document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                        if (menu !== dropdownMenu) {
+                            menu.style.display = 'none';
+                        }
+                    });
+                    
+                    // Toggle this dropdown
+                    if (dropdownMenu.style.display === 'block') {
+                        dropdownMenu.style.display = 'none';
+                    } else {
+                        dropdownMenu.style.display = 'block';
+                    }
+                });
+            });
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.has-dropdown')) {
+                    document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                        menu.style.display = 'none';
+                    });
+                }
+            });
+        }
+    });
+</script>
+</body>
+</html>
+       

@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IISSCE - Khulna University</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #006a4e; /* KU Green */
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 80px;
+            margin-right: 15px;
+        }
+        
+        .logo-text {
+            color: white;
+        }
+        
+        .logo-text h1 {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .logo-text p {
+            font-size: 16px;
+            font-weight: 400;
+        }
+        
+        .header-right {
+            text-align: right;
+            color: white;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: #2c3e50;
+            padding: 10px 0;
+        }
+        
+        .nav-menu {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .nav-menu ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu ul li {
+            margin-right: 20px;
+        }
+        
+        .nav-menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        
+        .nav-menu ul li a:hover {
+            color: #27ae60;
+        }
+        
+        .search-box {
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-box input {
+            padding: 8px;
+            border: none;
+            border-radius: 3px;
+            margin-right: 10px;
+        }
+        
+        .search-box button {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 400px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/api/placeholder/1200/400');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .hero-content p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title h2 {
+            font-size: 32px;
+            color: #006a4e;
+            margin-bottom: 10px;
+        }
+        
+        .section-title p {
+            font-size: 16px;
+            color: #666;
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .about-text {
+            flex: 0 0 60%;
+        }
+        
+        .about-image {
+            flex: 0 0 35%;
+            text-align: center;
+        }
+        
+        .about-image img {
+            max-width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Research Areas */
+        .research {
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .research-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .research-card {
+            flex: 0 0 calc(33.33% - 20px);
+            background-color: white;
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .research-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .research-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #006a4e;
+        }
+        
+        /* Team Members */
+        .team {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .team-member {
+            flex: 0 0 calc(25% - 20px);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 5px solid #f5f5f5;
+        }
+        
+        .team-member h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .team-member p {
+            color: #666;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .contact-form {
+            flex: 0 0 60%;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+        }
+        
+        .form-group button {
+            background-color: #006a4e;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .contact-details {
+            flex: 0 0 35%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .contact-item {
+            margin-bottom: 20px;
+        }
+        
+        .contact-item h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #006a4e;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column {
+            flex: 0 0 calc(25% - 20px);
+            margin-bottom: 20px;
+        }
+        
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 50px;
+            background-color: #27ae60;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            color: #bbb;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .research-card {
+                flex: 0 0 calc(50% - 15px);
+            }
+            
+            .team-member {
+                flex: 0 0 calc(33.33% - 20px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-top {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .header-right {
+                margin-top: 15px;
+                text-align: center;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+            }
+            
+            .nav-menu ul {
+                margin-bottom: 15px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .nav-menu ul li {
+                margin: 0 10px 10px;
+            }
+            
+            .search-box {
+                justify-content: center;
+            }
+            
+            .about-content, .contact-info {
+                flex-direction: column;
+            }
+            
+            .about-text, .about-image, .contact-form, .contact-details {
+                flex: 0 0 100%;
+            }
+            
+            .about-image {
+                margin-top: 30px;
+            }
+            
+            .contact-details {
+                margin-top: 30px;
+            }
+            
+            .research-card {
+                flex: 0 0 100%;
+            }
+            
+            .team-member {
+                flex: 0 0 calc(50% - 15px);
+            }
+            
+            .footer-column {
+                flex: 0 0 calc(50% - 15px);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .team-member {
+                flex: 0 0 100%;
+            }
+            
+            .footer-column {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IISSCE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        
+        .nav-bar {
+            background-color: #234567;
+            padding: 15px 0;
+            text-align: center;
+        }
+        
+        .nav-item {
+            display: inline-block;
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+        }
+        
+        .nav-item.active {
+            background-color: white;
+            color: #333;
+            font-weight: bold;
+        }
+        
+        .header-banner {
+            background: linear-gradient(to right, #234567, #2a7f8c);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        
+        .section-button {
+            background-color: #e88440;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 0;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+        
+        .content-area {
+            margin: 30px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        .profile-img {
+            width: 100px;
+            height: auto;
+        }
+        
+        .color-strip {
+            height: 5px;
+            background-color: #e88440;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-bar">
+        <a href="home.html" class="nav-item active">Home</a>
+        <a href="#" class="nav-item">Department Head</a>
+        <a href="#" class="nav-item">Officers/Staffs</a>
+        <a href="#" class="nav-item">Honor Board</a>
+        <a href="#" class="nav-item">Citizen Charter</a>
+        <a href="#" class="nav-item">Current Activities</a>
+        <a href="#" class="nav-item">Achievements</a>
+    </div>
+    
+    <div class="color-strip"></div>
+    
+    <div class="header-banner">
+        IISSCE
+    </div>
+    
+    <div class="container">
+        <button class="section-button">Department Description</button>
+        
+        <div class="content-area">
+            <!-- Department description content would go here -->
+        </div>
+        
+        <div style="display: flex; justify-content: space-between; margin: 30px 0;">
+            <button class="section-button">Address</button>
+            <button class="section-button">Contact</button>
+        </div>
+        
+        <div class="content-area">
+            <!-- Address and contact content would go here -->
+        </div>
+        
+        <button class="section-button">Department Head</button>
+        
+        <div class="content-area">
+            <table>
+                <tr>
+                    <th>Picture</th>
+                    <th>Name</th>
+                    <th>Designation</th>
+                    <th>Biography</th>
+                </tr>
+                <tr>
+                    <td><img src="17png.txt" alt="Prof. Dr. Md. Raihan Ali" class="profile-img"></td>
+                    <td>
+                        Prof. Dr. Md. Raihan Ali<br>
+                        Email : director@iissce.com ;<br>
+                        raihan.bge@gmail.com<br>
+                        Contact: +88-01711-953126<br>
+                        Profile Link:
+                    </td>
+                    <td>Director</td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
